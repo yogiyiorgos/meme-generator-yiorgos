@@ -71,3 +71,9 @@ main {
   background: linear-gradient(90deg, #711f8d 1.14%, #a818da 100%);
   border-radius: 5px;
 }
+
+.meme-image {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 5px;
+}

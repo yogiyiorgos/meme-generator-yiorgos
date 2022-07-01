@@ -1,22 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import memesData from '../memesData.js';
 
 function Meme() {
+  const [memeImage, setMemeImage] = useState('');
+
   function getMemeImage() {
     const memesArray = memesData.data.memes;
-    {
-      /* Shortcut acees to meme key */
-    }
     const randomNumber = Math.floor(Math.random() * memesArray.length);
-    {
-      /* Access a random index in the memesArray */
-    }
-    const url = memesArray[randomNumber].url;
-    {
-      /* Access the key of url in the memesArray and in a random index */
-    }
-    console.log(url);
+    setMemeImage(memesArray[randomNumber].url);
   }
+
   return (
     <main>
       <div className='form-container'>
@@ -26,6 +19,11 @@ function Meme() {
           Get a new meme image 🤖
         </button>
       </div>
+      <img
+        src={memeImage}
+        alt='Randomly generated meme'
+        className='meme-image'
+      />
     </main>
   );
 }
